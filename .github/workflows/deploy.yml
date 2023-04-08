@@ -32,8 +32,8 @@ jobs:
               # If you remove this step then you should probably remove the enable_jekyll option in the next one
             - name: Copy additional files
               run: |
-                  cp 404.html dist/index.html
-                  cp 404.html dist/404.html
+                  cp index.html dist/index.html
+                  cp index.html dist/404.html
 
               # Documentation: https://github.com/peaceiris/actions-gh-pages
             - name: Deploy to GitHub Pages
