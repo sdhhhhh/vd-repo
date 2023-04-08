@@ -1,0 +1,14 @@
+{
+    "name": "LoveFemboys",
+    "description": "Get a post of a femboy from reddit.",
+    "authors": [
+        {
+            "name": "sdh",
+            "id": "1075879793368760450"
+        }
+    ],
+    "main": "src/index.ts",
+    "vendetta": {
+        "icon": "ic_reaction_smile"
+    }
+}
