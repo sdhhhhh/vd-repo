@@ -1,7 +1,10 @@
-# Vendetta Plugins
+# Vendetta Plugins ([repo](https://github.com/sdhhhhh/vd-plugins))
 This repo contains my terrible plugins.
 
+* LoveFemboys ([link](https://sdhhhhh.github.io/vd-plugins/LoveFemboys))
+
 # How to install?
-Paste a plugin URL into the Plugins page of Vendetta, following a basic format of:
+Copy the link next to the plugin and paste it into Vendetta. \
+If this does not work paste this link into Vendetta and replace `PLUGIN_NAME` with the plugin you want to install.
 
 https:/\/sdhhhhh.github.io/vd-plugins/`PLUGIN_NAME`
