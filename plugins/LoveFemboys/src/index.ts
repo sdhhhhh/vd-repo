@@ -72,8 +72,8 @@ commands.push(registerCommand({
                 title: response?.title,
                 url: `https://reddit.com${response?.permalink}`,
                 image: {
-                  proxy_url: response?.url_overridden_by_dest ?? response?.url,
-                  url: response?.url_overridden_by_dest ?? response?.url,
+                  proxy_url: response?.url_overridden_by_dest.replace(/.gifv$/g,".gif") ?? response?.url.replace(/.gifv$/g,".gif"),
+                  url: response?.url_overridden_by_dest.replace(/.gifv$/g,".gif") ?? response?.url.replace(/.gifv$/g,".gif"),
                   width: response?.preview?.images?.[0]?.source?.width,
                   height: response?.preview?.images?.[0]?.source?.height
                 },
