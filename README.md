@@ -1,4 +1,4 @@
-# vd-plugins
+# vd-repo
 This repo contains my terrible plugins.
 
 # How to install?
