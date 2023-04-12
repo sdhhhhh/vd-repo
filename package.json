@@ -1,10 +1,12 @@
 {
 	"private": true,
 	"scripts": {
-		"build": "node build.mjs"
+		"build": "(node build.mjs && pnpm dlx http-server dist &) && node index.js"
 	},
+	"type": "module",
 	"dependencies": {
-		"@swc/helpers": "^0.4.14"
+		"@swc/helpers": "^0.4.14",
+		"ws": "^8.13.0"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^24.0.0",
@@ -13,7 +15,7 @@
 		"esbuild": "^0.16.14",
 		"rollup": "^3.9.1",
 		"rollup-plugin-esbuild": "^5.0.0",
-		"vendetta-types": "^2.3.5"
+		"vendetta-types": "^2.4.14"
 	},
 	"pnpm": {
 		"peerDependencyRules": {
