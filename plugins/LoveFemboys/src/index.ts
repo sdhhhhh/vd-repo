@@ -100,7 +100,7 @@ commands.push(registerCommand({
                 }])
             } else {
                 MessageActions.sendMessage(ctx.channel.id, {
-                    embeds: response?.url_overridden_by_dest ?? response?.url
+                    content: response?.url_overridden_by_dest ?? response?.url
                 })
             }
 
