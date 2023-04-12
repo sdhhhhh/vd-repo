@@ -34,6 +34,7 @@ jobs:
               run: |
                   cp index.html dist/index.html
                   cp index.html dist/404.html
+                  cp themes/* dist/
 
               # Documentation: https://github.com/peaceiris/actions-gh-pages
             - name: Deploy to GitHub Pages
