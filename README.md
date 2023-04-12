@@ -5,4 +5,4 @@ This repo contains my terrible plugins.
 Go to https://sdh.gay/vendetta and copy the plugin link and paste it into Vendetta.
 If this does not work paste the link below into Vendetta and replace `PLUGIN_NAME` with the plugin you want to install.
 
-https://sdhhhhh.github.io/vd-plugins/`PLUGIN_NAME`
+https://vendetta.sdh.gay/`PLUGIN_NAME`
