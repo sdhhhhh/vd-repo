@@ -1,5 +1,5 @@
 {
-    "name": "LowTeirYou",
+    "name": "LowTierYou",
     "description": "A theme for my Material You colorscheme.",
     "authors": [
         {
@@ -24,7 +24,7 @@
             "#ec002f"
         ],
         "INTERACTIVE_NORMAL": [
-            "#dfbfbd"
+            "#bea2a1"
         ],
         "INTERACTIVE_HOVER": [
             "#DCDDDE"
@@ -33,7 +33,7 @@
             "#ffffff"
         ],
         "INTERACTIVE_MUTED": [
-            "#a98b89"
+            "#836c6a"
         ],
         "BACKGROUND_PRIMARY": [
             "#271817"
@@ -63,7 +63,7 @@
             "#554241"
         ],
         "BACKGROUND_NESTED_FLOATING": [
-            "#1e1542"
+            "#271817"
         ],
         "BACKGROUND_MESSAGE_HOVER": [
             "#412c96"
@@ -75,7 +75,7 @@
             "transparent"
         ],
         "BACKGROUND_MODIFIER_SELECTED": [
-            "#transparent"
+            "#7c605f"
         ],
         "BACKGROUND_MODIFIER_ACCENT": [
             "transparent"
@@ -116,7 +116,7 @@
         "PRIMARY_100": "#dfbfbd",
         "PRIMARY_200": "#FFFFFF",
         "PRIMARY_300": "#dfbfbd",
-        "PRIMARY_360": "#7765b8",
+        "PRIMARY_360": "#dfbfbd",
         "PRIMARY_400": "#dfbfbd",
         "PRIMARY_500": "#271817",
         "PRIMARY_600": "#271817",
