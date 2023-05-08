@@ -13,9 +13,9 @@ const Avatars = findByProps("BOT_AVATARS")
 function sendReply(channelID, content, embed) {
     const channel = channelID ?? Channels?.getChannelId?.();
     const msg = BotMessage.createBotMessage({ channelId: channel, content: '', embeds: embed });
-    msg.author.username = 'Astolfo';
-    msg.author.avatar = 'Astolfo';
-    Avatars.BOT_AVATARS.Astolfo = 'https://i.pinimg.com/736x/50/77/1f/50771f45b1c015cfbb8b0853ba7b8521.jpg';
+    msg.author.username = 'FemboyFurryFinder';
+    //msg.author.avatar = 'Astolfo';
+    //Avatars.BOT_AVATARS.Astolfo = 'https://i.pinimg.com/736x/50/77/1f/50771f45b1c015cfbb8b0853ba7b8521.jpg';
 
     if (typeof content === 'string') {
         msg.content = content;
@@ -30,15 +30,15 @@ function sendReply(channelID, content, embed) {
 let commands = []
 
 commands.push(registerCommand({
-    name: "femboy",
-    displayName: "femboy",
-    description: "Get an image of a femboy",
-    displayDescription: "Get an image of a femboy",
+    name: "femboy-furry",
+    displayName: "femboy-furry",
+    description: "Get an image of a femboy furry",
+    displayDescription: "Get an image of a femboy furry",
     options: [{
         name: "nsfw",
         displayName: "nsfw",
-        description: "Get the result from r/femboys instead of r/femboy (NSFW)",
-        displayDescription: "Get the result from r/femboys instead of r/femboy (NSFW)",
+        description: "(NSFW)",
+        displayDescription: "(NSFW)",
         required: false,
         type: 5
     }, {
@@ -71,12 +71,12 @@ commands.push(registerCommand({
                 sendReply(ctx.channel.id, "Incorrect sorting type. Valid options are\n`best`, `hot`, `new`, `rising`, `top`, `controversial`.", [])
                 return
             }
-            let response = await fetch(`https://www.reddit.com/r/femboy/${sort}.json?limit=100`).then(res => res.json());
+            let response = await fetch(`https://www.reddit.com/r/FurryFemboy/${sort}.json?limit=100`).then(res => res.json());
             if (!ctx.channel.nsfw_ && nsfw && storage.nsfwwarn && !(silent ?? true)) {
                 sendReply(ctx.channel.id, "This channel is not marked as NSFW\n(You can disable this check in plugin settings)", [])
                 return
             }
-            if (nsfw) { response = await fetch(`https://www.reddit.com/r/femboys/${sort}.json?limit=100`).then(res => res.json()); }
+            if (nsfw) { response = await fetch(`https://www.reddit.com/r/furryfemboyyiff/${sort}.json?limit=100`).then(res => res.json()); }
             response = response.data?.children?.[Math.floor(Math.random() * response.data?.children?.length)]?.data;
             let author = await fetch(`https://www.reddit.com/u/${response?.author}/about.json`).then(res => res.json());
 
