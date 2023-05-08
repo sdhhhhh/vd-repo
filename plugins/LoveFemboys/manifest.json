@@ -1,11 +1,14 @@
 {
-    "name": "LoveFemboys",
-    "description": "Get a post of a femboy from reddit.",
+    "name": "LoveFemboyFurries",
+    "description": "Get a post of a femboy furry from reddit.",
     "authors": [
         {
             "name": "sdh",
             "id": "1075879793368760450"
-        }
+        },
+        {
+            "name": "creepycats"
+            "id": "588025244263120896"
     ],
     "main": "src/index.ts",
     "vendetta": {
