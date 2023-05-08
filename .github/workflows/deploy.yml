@@ -34,7 +34,7 @@ jobs:
               run: |
                   cp index.html dist/index.html
                   cp index.html dist/404.html
-                  cp themes/* dist/
+
 
               # Documentation: https://github.com/peaceiris/actions-gh-pages
             - name: Deploy to GitHub Pages
@@ -45,4 +45,4 @@ jobs:
                   # Makes it so the md files in the previous step get processed by GitHub Pages
                   enable_jekyll: true
                   # This creates the CNAME file required to host GitHub Pages on a custom domain
-                  cname: vendetta.sdh.gay
+
