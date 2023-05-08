@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"scripts": {
-		"build": "(node build.mjs && pnpm dlx http-server dist &) && node index.js"
+		"build": "node build.mjs"
 	},
 	"type": "module",
 	"dependencies": {
