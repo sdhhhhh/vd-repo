@@ -9,6 +9,7 @@
         {
             "name": "creepycats"
             "id": "588025244263120896"
+        }
     ],
     "main": "src/index.ts",
     "vendetta": {
