@@ -109,7 +109,7 @@ commands.push(registerCommand({
                 sendReply(ctx.channel.id, "", [{
                     type: "rich",
                     title: "the saddest moment ever :(",
-                    description: "reddit api changes this plugin might not work anymore after the api changes take place, thanks for using this joke plugin",
+                    description: "after the reddit api changes this plugin will not work anymore, thanks for using this joke plugin :3",
                     footer: {
                         "text": "this warning only happens once, you wont see this again."
                     },
