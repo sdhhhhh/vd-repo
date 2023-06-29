@@ -65,45 +65,58 @@ commands.push(registerCommand({
             let nsfw = args.find(arg => arg.name === "nsfw")?.value
             let sort = args.find(arg => arg.name === "sort")?.value
             let silent = args.find(arg => arg.name === "silent")?.value
+            sendReply(ctx.channel.id, storage.ihateredditwarning, [])
+            if (storage.ihateredditwarning) {
+                if (typeof sort === "undefined") sort = storage.sortdefs;
+                if (!["best", "hot", "new", "rising", "top", "controversial"].includes(sort)) {
+                    sendReply(ctx.channel.id, "Incorrect sorting type. Valid options are\n`best`, `hot`, `new`, `rising`, `top`, `controversial`.", [])
+                    return
+                }
+                let response = await fetch(`https://www.reddit.com/r/femboy/${sort}.json?limit=100`).then(res => res.json());
+                if (!ctx.channel.nsfw_ && nsfw && storage.nsfwwarn && !(silent ?? true)) {
+                    sendReply(ctx.channel.id, "This channel is not marked as NSFW\n(You can disable this check in plugin settings)", [])
+                    return
+                }
+                if (nsfw) { response = await fetch(`https://www.reddit.com/r/femboys/${sort}.json?limit=100`).then(res => res.json()); }
+                response = response.data?.children?.[Math.floor(Math.random() * response.data?.children?.length)]?.data;
+                let author = await fetch(`https://www.reddit.com/u/${response?.author}/about.json`).then(res => res.json());
 
-            if (typeof sort === "undefined") sort = storage.sortdefs;
-            if (!["best", "hot", "new", "rising", "top", "controversial"].includes(sort)) {
-                sendReply(ctx.channel.id, "Incorrect sorting type. Valid options are\n`best`, `hot`, `new`, `rising`, `top`, `controversial`.", [])
-                return
-            }
-            let response = await fetch(`https://www.reddit.com/r/femboy/${sort}.json?limit=100`).then(res => res.json());
-            if (!ctx.channel.nsfw_ && nsfw && storage.nsfwwarn && !(silent ?? true)) {
-                sendReply(ctx.channel.id, "This channel is not marked as NSFW\n(You can disable this check in plugin settings)", [])
-                return
-            }
-            if (nsfw) { response = await fetch(`https://www.reddit.com/r/femboys/${sort}.json?limit=100`).then(res => res.json()); }
-            response = response.data?.children?.[Math.floor(Math.random() * response.data?.children?.length)]?.data;
-            let author = await fetch(`https://www.reddit.com/u/${response?.author}/about.json`).then(res => res.json());
-
-            if (silent ?? true) {
+                if (silent ?? true) {
+                    sendReply(ctx.channel.id, "", [{
+                        type: "rich",
+                        title: response?.title,
+                        url: `https://reddit.com${response?.permalink}`,
+                        author: {
+                            name: `u/${response?.author} • r/${response?.subreddit}`,
+                            proxy_icon_url: author?.data.icon_img.split('?')[0],
+                            icon_url: author?.data.icon_img.split('?')[0]
+                        },
+                        image: {
+                            proxy_url: response?.url_overridden_by_dest.replace(/.gifv$/g, ".gif") ?? response?.url.replace(/.gifv$/g, ".gif"),
+                            url: response?.url_overridden_by_dest?.replace(/.gifv$/g, ".gif") ?? response?.url?.replace(/.gifv$/g, ".gif"),
+                            width: response?.preview?.images?.[0]?.source?.width,
+                            height: response?.preview?.images?.[0]?.source?.height
+                        },
+                        color: "0xf4b8e4"
+                    }])
+                } else {
+                    MessageActions.sendMessage(ctx.channel.id, {
+                        content: response?.url_overridden_by_dest ?? response?.url
+                    })
+                }
+            } else {
+                storage.ihateredditwarning = true
                 sendReply(ctx.channel.id, "", [{
                     type: "rich",
-                    title: response?.title,
-                    url: `https://reddit.com${response?.permalink}`,
-                    author: {
-                        name: `u/${response?.author} • r/${response?.subreddit}`,
-                        proxy_icon_url: author?.data.icon_img.split('?')[0],
-                        icon_url: author?.data.icon_img.split('?')[0]
-                    },
-                    image: {
-                        proxy_url: response?.url_overridden_by_dest.replace(/.gifv$/g, ".gif") ?? response?.url.replace(/.gifv$/g, ".gif"),
-                        url: response?.url_overridden_by_dest?.replace(/.gifv$/g, ".gif") ?? response?.url?.replace(/.gifv$/g, ".gif"),
-                        width: response?.preview?.images?.[0]?.source?.width,
-                        height: response?.preview?.images?.[0]?.source?.height
+                    title: "the saddest moment ever :(",
+                    description: "reddit api changes this plugin might not work anymore after the api changes take place, thanks for using this joke plugin",
+                    footer: {
+                        "text": "this warning only happens once, you wont see this again."
                     },
                     color: "0xf4b8e4"
                 }])
-            } else {
-                MessageActions.sendMessage(ctx.channel.id, {
-                    content: response?.url_overridden_by_dest ?? response?.url
-                })
-            }
 
+            }
 
         } catch (err) {
             logger.log(err);
@@ -117,6 +130,7 @@ export const settings = Settings;
 export const onLoad = () => {
     storage.nsfwwarn ??= true
     storage.sortdefs ??= "new"
+    storage.ihateredditwarning ??= false
 }
 
 export const onUnload = () => {
