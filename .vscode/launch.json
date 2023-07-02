@@ -14,7 +14,7 @@
             "type": "node-terminal",
             "name": "Run Script: build",
             "request": "launch",
-            "command": "node build.mjs && pnpm dlx http-server dist",
+            "command": "(node build.mjs && pnpm dlx http-server dist &) && cp -R ./themes/* ./dist",
             "cwd": "${workspaceFolder}"
         }
     ]
