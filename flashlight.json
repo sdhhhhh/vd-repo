@@ -1,0 +1,144 @@
+{
+    "name": "flashlight",
+    "description": "what the fuck is wrong with you",
+    "authors": [
+        {
+            "name": "emily (sdh)",
+            "id": "1117938860375146617"
+        }
+    ],
+    "semanticColors": {
+        "HEADER_PRIMARY": [
+            "#000000"
+        ],
+        "HEADER_SECONDARY": [
+            "#000000"
+        ],
+        "TEXT_NORMAL": [
+            "#000000"
+        ],
+        "TEXT_MUTED": [
+            "#808080"
+        ],
+        "TEXT_DANGER": [
+            "#000000"
+        ],
+        "INTERACTIVE_NORMAL": [
+            "#000000"
+        ],
+        "INTERACTIVE_HOVER": [
+            "#DCDDDE"
+        ],
+        "INTERACTIVE_ACTIVE": [
+            "#000000"
+        ],
+        "INTERACTIVE_MUTED": [
+            "#808080"
+        ],
+        "BACKGROUND_PRIMARY": [
+            "#ffffff"
+        ],
+        "BACKGROUND_SECONDARY": [
+            "#ffffff"
+        ],
+        "BACKGROUND_SECONDARY_ALT": [
+            "#ffffff"
+        ],
+        "BACKGROUND_TERTIARY": [
+            "#ffffff"
+        ],
+        "BACKGROUND_ACCENT": [
+            "#000000"
+        ],
+        "BACKGROUND_FLOATING": [
+            "#ffffff"
+        ],
+        "BACKGROUND_MOBILE_PRIMARY": [
+            "#ffffff"
+        ],
+        "BACKGROUND_MENTIONED": [
+            "#c4c4c4"
+        ],
+        "BACKGROUND_MOBILE_SECONDARY": [
+            "#ffffff"
+        ],
+        "BACKGROUND_NESTED_FLOATING": [
+            "#ffffff"
+        ],
+        "BACKGROUND_MESSAGE_HOVER": [
+            "#ffffff"
+        ],
+        "BACKGROUND_MODIFIER_HOVER": [
+            "#transparent"
+        ],
+        "BACKGROUND_MODIFIER_ACTIVE": [
+            "transparent"
+        ],
+        "BACKGROUND_MODIFIER_SELECTED": [
+            "#c4c4c4"
+        ],
+        "BACKGROUND_MODIFIER_ACCENT": [
+            "transparent"
+        ],
+        "SCROLLBAR_THIN_THUMB": [
+            "#000000"
+        ],
+        "SCROLLBAR_THIN_TRACK": [
+            "ffffff"
+        ],
+        "SCROLLBAR_AUTO_THUMB": [
+            "#000000"
+        ],
+        "SCROLLBAR_AUTO_TRACK": [
+            "#ffffff"
+        ],
+        "KEYBOARD": [
+            "#ffffff"
+        ],
+        "CHANNEL_TEXT_AREA_PLACEHOLDER": [
+            "#000000"
+        ],
+        "CHANNELTEXTAREA_BACKGROUND": [
+            "#000000"
+        ],
+        "CHANNEL_ICON": [
+            "#000000"
+        ],
+        "CHANNELS_DEFAULT": [
+            "#000000"
+        ],
+        "CHAT_BACKGROUND": [
+            "#ffffff"
+        ],
+        "SPOILER_HIDDEN_BACKGROUND": [
+            "#DCDDDE"
+        ]
+    },
+    "rawColors": {
+        "PRIMARY": "#000000",
+        "PRIMARY_100": "#000000",
+        "PRIMARY_200": "#FFFFFF",
+        "PRIMARY_300": "#000000",
+        "PRIMARY_360": "#000000",
+        "PRIMARY_400": "#000000",
+        "PRIMARY_500": "#ffffff",
+        "PRIMARY_600": "#ffffff",
+        "PRIMARY_630": "#ffffff",
+        "PRIMARY_660": "#ffffff",
+        "PRIMARY_700": "#ffffff",
+        "PRIMARY_800": "#ffffff",
+        "PRIMARY_900": "#090909",
+        "BRAND_360": "#000000",
+        "YELLOW_300": "#000000",
+        "BRAND_260": "#000000",
+        "BRAND_500": "#000000",
+        "BRAND_560": "#000000",
+        "GREEN_360": "#000000",
+        "RED_400": "#000000",
+        "ORANGE_345": "#000000",
+        "RED_560": "#000000",
+        "GREEN_345": "#000000",
+        "BLUE_345": "#000000"
+    },
+    "spec": 2
+}
